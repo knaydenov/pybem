@@ -92,20 +92,17 @@ class Node(ABC):
 
     def generate_mixes_classes(self):
         for mix in self.__mixes:
-            for c in mix.generate_classes():
-                yield c
+            yield from mix.generate_classes()
 
     def generate_classes(self):
         yield self.get_base_class()
 
-        for c in self.generate_modifier_classes():
-            yield c
+        yield from self.generate_modifier_classes()
 
         for c in self.__classes.keys():
             yield c
 
-        for c in self.generate_mixes_classes():
-            yield c
+        yield from self.generate_mixes_classes()
 
     def m(self, name, value=True):
         return self.add_modifier(name, value)
