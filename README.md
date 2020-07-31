@@ -6,7 +6,7 @@ This package provides helpers for BEM classes generation.
 
 ## Usage
 
-Injecting into a Flask template
+Injecting into a Flask template:
 
 ```python
 from pybem import Block
@@ -20,7 +20,7 @@ Template:
 
 ```jinja2
 <div class="{{ b('block').m('color', 'red') }}">
-    <div class="{{ b('block').e('element').m('hidden').add_class('no-js) }}"></div>
+    <div class="{{ b('block').e('element').m('hidden').add_class('no-js') }}"></div>
 </div>
 ```
 
