@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='pybem',
-    version='0.1.0',
+    version='0.1.1',
     author="Klim Naydenov",
     author_email="knaydenov@gmail.com",
     description='This package provides helpers for BEM classes generation',
