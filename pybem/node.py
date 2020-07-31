@@ -82,13 +82,13 @@ class Node(ABC):
     def generate_modifier_classes(self):
         for modifier in self.__modifiers:
             if type(self.__modifiers[modifier]) is bool and self.__modifiers[modifier]:
-                yield f'%s--%s' % (self.get_base_class(), modifier)
+                yield '{}--{}'.format(self.get_base_class(), modifier)
             elif type(self.__modifiers[modifier]) is str:
-                yield f'%s--%s_%s' % (self.get_base_class(), modifier, self.__modifiers[modifier])
+                yield '{}--{}_{}'.format(self.get_base_class(), modifier, self.__modifiers[modifier])
             elif type(self.__modifiers[modifier]) is list:
                 base_class = self.get_base_class()
                 for v in self.__modifiers[modifier]:
-                    yield f'%s--%s_%s' % (base_class, modifier, str(v))
+                    yield '{}--{}_{}'.format(base_class, modifier, str(v))
 
     def generate_mixes_classes(self):
         for mix in self.__mixes:
