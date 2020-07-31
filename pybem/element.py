@@ -13,6 +13,6 @@ class Element(Node):
         self.__block = block
 
     def get_base_class(self):
-        return f'%s__%s' % (self.get_block().get_name(), self.get_name())
+        return '{}__{}'.format(self.get_block().get_name(), self.get_name())
 
 
