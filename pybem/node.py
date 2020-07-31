@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
+from collections import OrderedDict
 
 
 class Node(ABC):
     def __init__(self, name: str):
         self.__name = name
-        self.__classes = {}
-        self.__modifiers = {}
+        self.__classes = OrderedDict()
+        self.__modifiers = OrderedDict()
         self.__mixes = []
 
     def get_name(self):
