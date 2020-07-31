@@ -8,4 +8,5 @@ setup(
     url='https://github.com/knaydenov/pybem',
     install_requires=[],
     packages=['pybem'],
+    python_requires='>=3.4',
 )
