@@ -84,7 +84,7 @@ class Node(ABC):
         for modifier in self.__modifiers:
             if type(self.__modifiers[modifier]) is bool and self.__modifiers[modifier]:
                 yield '{}--{}'.format(self.get_base_class(), modifier)
-            elif type(self.__modifiers[modifier]) is str:
+            elif type(self.__modifiers[modifier]) in [str, int]:
                 yield '{}--{}_{}'.format(self.get_base_class(), modifier, self.__modifiers[modifier])
             elif type(self.__modifiers[modifier]) is list:
                 base_class = self.get_base_class()

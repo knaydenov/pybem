@@ -71,6 +71,7 @@ class NodeTest(TestCase):
         header = NodeImpl('header')
         header.add_modifier('sticky')
         header.add_modifier('color', 'red')
+        header.add_modifier('width', 10)
         header.add_class('with-helper')
 
         card = NodeImpl('card')
@@ -80,7 +81,7 @@ class NodeTest(TestCase):
 
         header.add_mix(card)
 
-        self.assertEqual(str(header), 'header header--sticky header--color_red with-helper card card--border_thin js-anchor')
+        self.assertEqual(str(header), 'header header--sticky header--color_red header--width_10 with-helper card card--border_thin js-anchor')
 
 
 
